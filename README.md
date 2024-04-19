@@ -22,12 +22,10 @@ Como se puede ver en el diseño principal, contiene un header, se puede ver tamb
 </div>
 </br>
 Como se puede apreciar el modo responsivo tiene un menu y los componentes cambian de lugar, estando anteriormente en fila, ahora están en columna, esto gracias al componente de media queries, junto con estas opciones también contiene un panel que abre y cierra en modo de celular
-<div style="text-align: center;">
-    <img src="img/5.png" alt="" />
-</div>
-<div style="text-align: center;">
-    <img src="img/6.png" alt="" />
-    <img src="img/7.png" alt="" />
+<div>
+    <img src="img/5.png" style="width=50px" alt="" />
+    <img src="img/6.png" style="width=50px" alt="" />
+    <img src="img/7.png" style="width=50px" alt="" />
 </div>
 
 ## Cambio de productos
