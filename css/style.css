@@ -40,6 +40,10 @@
     );
 }
 
+html{
+    background-color: var(--bg);
+}
+
 header{
     left: 0;
     height: 12vh;
@@ -50,6 +54,13 @@ header{
     padding-left: 4%;
     padding-right: 4%;
     transition: none;
+}
+
+header #logo{
+    padding: 0.8%;
+    animation-name: aparicion_arriba;
+    animation-duration: 6s;
+    cursor: pointer;
 }
 
 .caja_derecha_text{
@@ -64,6 +75,11 @@ header{
 .caja_derecha_text a{
     text-decoration: none;
     color: var(--bg);
+}
+
+.caja_derecha_text a:hover{
+    color: var(--tc);
+    transition: 0.5s ease all;
 }
 
 .caja_derecha_text img{
@@ -87,6 +103,12 @@ main{
     align-items: center;
 }
 
+.caja_izquierda .caja_centro_izquierda #titulo{
+    animation-name: aparicion_izquierda;
+    animation-duration: 3s;
+    
+}
+
 .caja_centro_izquierda{
     background-color: var(--bg);
     color: var(--tc);
@@ -104,11 +126,16 @@ main{
     color: var(--tc);
 }
 
+.caja_centro_izquierda p{
+    animation-name: aparicion_abajo;
+    animation-duration: 5s;
+    color: var(--tc);
+}
+
 .caja_derecha{
     height: 100%;
     width: 43%;
     background-color: var(--bg);
-    border-radius: 8%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,6 +143,9 @@ main{
 
 .caja_derecha_centro{
     height: 80%;
+    animation: 
+    aparicion_derecha 2s ease,
+    movimiento 1.8s ease-in-out infinite 2s;
 }
 
 .caja_derecha_centro img{
@@ -133,7 +163,9 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 2px solid black;
+    border: 2px solid var(--tc);
+    animation-name: aparicion_abajo;
+    animation-duration: 8s;
 }
 
 .caja_fijada_2{
@@ -148,7 +180,9 @@ main{
     top: 20%;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid var(--tc);
+    animation-name: aparicion_derecha;
+    animation-duration: 8s;
 }
 
 .caja_fijada img:hover{
@@ -157,6 +191,73 @@ main{
 
 .caja_fijada_2 img:hover{
     cursor: pointer;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    background-color: cadetblue;
+    position: fixed;
+    transform: translateY(100vh);
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 20%;
+}
+
+section a{
+    color: var(--bg);
+    text-decoration: none;
+}
+
+@keyframes aparicion_derecha{
+    0%{
+        transform: translateX(100vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes aparicion_izquierda{
+    0%{
+        transform: translateX(-100vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes aparicion_arriba{
+    0%{
+        transform: translatey(-100vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes aparicion_abajo{
+    0%{
+        transform: translatey(100vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes movimiento{
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(20px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
 
 @media (max-width: 750px) {
@@ -180,7 +281,9 @@ main{
         height: 40%;
     }
 
-    .caja_fijada_2 img{
+    .caja_fijada_2 a{
+        justify-content: center;
+        align-items: center;
         width: 70% !important;
         height: 20% !important;
     }
@@ -236,7 +339,10 @@ main{
         height: 27%;
     }
 
-    .caja_fijada_2 img{
+    .caja_fijada_2 a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 60% !important;
         height: 15% !important;
     }
